@@ -2,19 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        PrintWriter pw = new PrintWriter(System.out);
+    public static int mySqrt(int x) {
 
-        int t = in.nextInt();
-        for (int tt = 0; tt < t; tt++) {
-
-
-        }
-        pw.close();
+        return (int)Math.sqrt(x);
     }
 
-    static void debug(Object... obj) {
-        System.err.println(Arrays.deepToString(obj));
-    }
 }
