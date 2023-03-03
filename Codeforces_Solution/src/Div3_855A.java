@@ -8,77 +8,19 @@ public class Div3_855A {
 
         int t = in.nextInt();
         for (int tt = 0; tt < t; tt++) {
-            int n = in.nextInt();
-            String s = in.next();
+            int n=in.nextInt();
+            String s=in.next();
+            s=s.toLowerCase();
+            String w=""+s.charAt(0);
+            for(int i=1;i<n;i++){
+                if(s.charAt(i)!=s.charAt(i-1))
+                    w+=s.charAt(i);
+            }
 
-            String s1 ="meow",s2 = "MEOW";
-            int c = 0;
-            if(n<=3){
+            if(w.equals("meow"))
+                pw.println("YES");
+            else
                 pw.println("NO");
-            }
-            else {
-                int ind = 0;
-                char ch = 'a';
-                for (int i = 0; i < s.length(); i++) {
-                    if (s.charAt(i) == 'm' || s.charAt(i) == 'M') {
-                        continue;
-                    } else {
-                        ch = s.charAt(i);
-                        ind = i;
-                        break;
-                    }
-                }
-
-
-                if (ch == 'e' || ch == 'E') {
-                    for (int i = ind; i < s.length(); i++) {
-                        if (s.charAt(i) == 'e' || s.charAt(i) == 'E') {
-                            continue;
-                        } else {
-                            ch = s.charAt(i);
-                            ind = i;
-                            break;
-                        }
-                    }
-
-                    if (ch == 'O' || ch == 'o') {
-                        for (int i = ind; i < s.length(); i++) {
-                            if (s.charAt(i) == 'o' || s.charAt(i) == 'O') {
-                                continue;
-                            } else {
-                                ch = s.charAt(i);
-                                ind = i;
-                                break;
-                            }
-                        }
-
-                        boolean flag = true;
-                        if (ch == 'W' || ch == 'w') {
-                            for (int i = ind; i < s.length(); i++) {
-                                if (s.charAt(i) == 'w' || s.charAt(i) == 'W') {
-                                    continue;
-                                } else {
-                                    flag = false;
-                                    //pw.println("NO");
-                                    break;
-                                }
-                            }
-
-                            if (flag) {
-                                pw.println("YES");
-                            } else {
-                                pw.println("NO");
-                            }
-                        } else {
-                            pw.println("NO");
-                        }
-                    } else {
-                        pw.println("NO");
-                    }
-                } else {
-                    pw.println("NO");
-                }
-            }
         }
         pw.close();
     }
