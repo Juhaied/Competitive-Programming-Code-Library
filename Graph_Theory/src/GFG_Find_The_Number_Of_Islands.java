@@ -22,7 +22,7 @@ public class GFG_Find_The_Number_Of_Islands {
             this.second = second;
         }
     }
-    public  int numIsLands(char grid[][]){
+    public  int numIslands(char grid[][]){
         int n = grid.length;
         int m = grid[0].length;
 
@@ -54,12 +54,13 @@ public class GFG_Find_The_Number_Of_Islands {
             q.remove();
 
             for(int delrow = -1;delrow<=1;delrow++){
-                for (int delcol = -1;delcol<=1;delcol++){
+                for(int delcol = -1;delcol<=1;delcol++){
                     int nrow = row+delrow;
                     int ncol = col+delcol;
 
-                    if(nrow>=0 && nrow<n && ncol>=0 && ncol<n &&  grid[nrow][ncol]=='1' && vis
+                    if(nrow>=0 && nrow<n && ncol>=0 && ncol<m &&  grid[nrow][ncol]=='1' && vis
                     [nrow][ncol]==0){
+                        vis[nrow][ncol] = 1;
                         q.add(new Pair(nrow,ncol));
                     }
                 }
