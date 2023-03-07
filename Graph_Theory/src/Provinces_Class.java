@@ -21,7 +21,7 @@ public class Provinces_Class {
         }
         vis = new boolean[n+1];
 
-        pw.println(findCircleNum()-1);
+        pw.println(findCircleNum());
         pw.close();
     }
 
@@ -29,9 +29,9 @@ public class Provinces_Class {
 
         int cnt = 0;
 
-        for(int i = 0;i<vis.length;i++){
+        for(int i = 1;i<vis.length;i++){
             if(vis[i] == false){
-                vis[i] =true;
+                //vis[i] =true;
                 cnt++;
                 dfs(i);
             }
