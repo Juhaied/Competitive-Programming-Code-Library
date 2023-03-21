@@ -22,7 +22,7 @@ public class Div2_360_A {
             }
         }
 
-        pw.println(ans);
+        pw.println(Math.max(ans,0));
         pw.close();
     }
 
