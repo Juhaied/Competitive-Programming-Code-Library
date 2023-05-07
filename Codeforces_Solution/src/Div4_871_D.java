@@ -10,19 +10,47 @@ public class Div4_871_D {
         for (int tt = 0; tt < t; tt++) {
             int n = in.nextInt(), m = in.nextInt();
 
-            if(n==m){
+            if(n<m){
+                pw.println("NO");
+                continue;
+            }
+            else if(n==m){
                 pw.println("YES");
+                continue;
             }
             else if(n % 3!=0){
                 pw.println("NO");
+                continue;
+            }
+           PriorityQueue<Integer> pq= new PriorityQueue<>();
+
+            pq.add(n);
+
+            boolean flag = false;
+
+            while (!pq.isEmpty()){
+                int num = pq.poll();
+
+                int a = num/3;
+
+                if(a==m || a*2==m){
+                    flag = true;
+                    break;
+                }
+
+                if(a%3==0){
+                    pq.add(a);
+                }
+                if((a*2)%3==0){
+                    pq.add(a*2);
+                }
+            }
+
+            if(flag){
+                pw.println("YES");
             }
             else {
-                if(solve(n,m)){
-                    pw.println("YES");
-                }
-                else {
-                    pw.println("NO");
-                }
+                pw.println("NO");
             }
         }
         pw.close();
