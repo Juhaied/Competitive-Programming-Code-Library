@@ -8,33 +8,41 @@ public class Edu_148_B {
 
         int t = in.nextInt();
         for (int tt = 0; tt < t; tt++) {
-            int n = in.nextInt(), k = in.nextInt();
+            int n = in.nextInt();
+            int a[] = new int[n];
 
-            ArrayList<Long> list = new ArrayList<>();
-
+            HashSet<Integer> set = new HashSet<>();
             for(int i = 0;i<n;i++){
-                list.add(in.nextLong());
+                a[i] = in.nextInt();
             }
 
-            Collections.sort(list);
+            n = removeDuplicates(a,n);
+            int ans  = n;
 
-            long pref[] = new long[n+1];
+            //debug(ans);
 
-            for(int i = 0;i<n;i++){
-                pref[i+1] = pref[i]+list.get(i);
+            for(int i = 0;i+2<n;++i){
+                if(a[i]>a[i+1] && a[i+1]>a[i+2]){
+                    ans--;
+                }
+                if(a[i]<a[i+1] && a[i+1]<a[i+2]){
+                    ans--;
+                }
             }
 
-            //debug(pref);
+            pw.println(ans);
 
-            long sum = 0;
-            for(int i =0;i<=k;i++){
-                sum = Math.max(sum,pref[n-i]-pref[2*(k-i)]);
-
-               // debug(sum+" "+pref[n-i]+" "+pref[2*(k-i)]);
-            }
-            pw.println(sum);
         }
         pw.close();
+    }
+    public static int removeDuplicates(int[] nums, int n) {
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (i == n - 1 || nums[i] != nums[i + 1]) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
     }
 
     static void debug(Object... obj) {
