@@ -748,6 +748,36 @@ public class Algorithm {
 
         return l;
     }
+   /* public static int N=(int) 1e7;
+    public static boolean isPrime[] = new boolean[N + 1];
+    static ArrayList<Integer> sieveGenerate() { // O(N lgN)
+
+        for(int i = 0; i <= N; i++) {
+            isPrime[i] = true;
+        }
+        isPrime[0] = isPrime[1] = false;
+        for(int i = 2; i*i <= N; i++) {
+            if(isPrime[i] == true) {
+                for(int j = i + i; j <= N; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        ArrayList<Integer> l = new ArrayList<>();
+
+        for(int i = 2; i <= N; i++)
+        {
+            if(isPrime[i] == true){
+                l.add(i);
+            }
+
+        }
+        return l;
+    }
+
+    */
+
     static long trailingZeros(long N) {
         long zeros = 0;
         for (long i = 5; N / i > 0; i *= 5) {
