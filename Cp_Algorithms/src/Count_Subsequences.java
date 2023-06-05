@@ -1,6 +1,20 @@
 import java.util.Scanner;
 
 public class Count_Subsequences {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read input
+        int N = scanner.nextInt();
+        String s = scanner.next();
+
+        // Calculate and print the answer
+        int answer = countSubsequences(s);
+        System.out.println(answer);
+
+        scanner.close();
+    }
     public static int countSubsequences(String s) {
         int n = s.length();
         String word = "NSU";
@@ -20,17 +34,4 @@ public class Count_Subsequences {
         return dp[n][word.length()];
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Read input
-        int N = scanner.nextInt();
-        String s = scanner.next();
-
-        // Calculate and print the answer
-        int answer = countSubsequences(s);
-        System.out.println(answer);
-
-        scanner.close();
-    }
 }
