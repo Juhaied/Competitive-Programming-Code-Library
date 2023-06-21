@@ -1,4 +1,3 @@
-//Long_Contest_Counting_Divisors
 
 import java.io.IOException;
 import java.io.InputStream;
