@@ -30,7 +30,7 @@ public class Div2_94_B {
                 if(adj[i].size()==1){
                     flag = false;
                     list.add(i);
-                    adj[i].clear();
+                  //  adj[i].clear();
                 }
             }
 
