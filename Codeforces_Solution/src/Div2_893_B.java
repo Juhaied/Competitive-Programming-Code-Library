@@ -8,13 +8,24 @@ public class Div2_893_B {
 
         int t = in.nextInt();
         for (int tt = 0; tt < t; tt++) {
-            int n = in.nextInt(), m = in.nextInt(),d  = in.nextInt();
-            int a[] = new int[n];
+            Map<Integer,Integer> map = new LinkedHashMap<>();
+            int n = in.nextInt();
+            for (int i = 1;i<=n;i++){
+                int val = i;
+                while (val<=n){
+                    if(!map.containsKey(val)){
+                        map.put(val,1);
+                    }
+                    val*=2;
 
-            for (int i = 0;i<n;i++){
-                a[i] = in.nextInt();
+                    //debug(map);
+                }
             }
 
+            for (int I : map.keySet()){
+                pw.print(I+" ");
+            }
+            pw.println();
         }
         pw.close();
     }
